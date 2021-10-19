@@ -16,14 +16,6 @@ import sys
 #         return max_sum
 
 
-2
-3
-4
-5
-6
-7
-8
-9
 class Solution:
     # @param A, a list of integers
     # @return an integer
