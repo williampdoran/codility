@@ -13,5 +13,5 @@ def fibonnacci_dyn(n):
         fib[i] = fib[i-1] + fib[i -2]
     return fib[n]
 
-print(fibonacci(50))
-print(fibonnacci_dyn(50))
+print(fibonacci(10))
+print(fibonnacci_dyn(10))

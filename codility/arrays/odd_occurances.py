@@ -5,4 +5,4 @@ def solution(A):
     return current
 
 if __name__ == '__main__':
-    print(solution([9,3,9,5,5,3,6]))
+    print(solution([9,3,9,5,5,3,6,6, 7]))
