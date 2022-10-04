@@ -5,7 +5,9 @@ def max_sum(A):
         max_so_far = max(max_ending_here, max_so_far)
     return max_so_far
 
+
 print(max_sum([5,-7,3,5,-2,4,-1]))
+
 
 def solution(A):
     if len(A) < 2: return 0
@@ -15,11 +17,13 @@ def solution(A):
         max_profit = max(max_to_here - A[i], max_profit)
     return max_profit
 
+
 def solution2(A):
     if len(A) < 2: return 0
     profits = [0] * (len(A) -1)
     for i in range(0, len(A) -1):
         profits[i] = A[i+1] - A[i]
+    print(profits)
     return max_sum(profits)
 
 

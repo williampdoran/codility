@@ -33,5 +33,32 @@ class Solution:
         maxProfit = max(0, maxProfit)
         return maxProfit
 
-print(Solution().maxProfit([7,1,5,3,6,4]))
-print(Solution().maxProfit([7,6,4,3,1]))
+    def maxProfitDynamicProgramming(self, prices):
+        n = len(prices)
+        if len(prices) < 2:
+            return 0
+        else:
+            m = prices[0]
+            dp = [0] * n
+            for i in range(n):
+                print(dp, m)
+                dp[i] = prices[i] - m
+                if m > prices[i]:
+                    m = prices[i]
+        return max(dp)
+
+    def solution(self, A):
+        if len(A) < 2: return 0
+        max_to_here, max_profit = A[-1], 0
+        for i in range(len(A) - 2, -1, -1):
+            max_to_here = max(max_to_here, A[i])
+            max_profit = max(max_to_here - A[i], max_profit)
+            print(max_profit, max_to_here)
+        return max_profit
+
+
+# print(Solution().maxProfit([7,1,5,3,6,4]))
+# print(Solution().maxProfit([7,6,4,3,1]))
+
+print(Solution().maxProfitDynamicProgramming([23171,21011,21123,21366,21013,21367]))
+print(Solution().solution([23171,21011,21123,21366,21013,21367]))
