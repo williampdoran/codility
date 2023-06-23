@@ -52,7 +52,8 @@ class Solution:
                 queue.pop()
             else:
                 return False
-
+        answer = "YES" if len(queue) == 0 else "NO"
         return len(queue) == 0
 
 assert Solution().isValidShitQuick('()') == True
+

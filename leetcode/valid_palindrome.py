@@ -41,11 +41,43 @@ class Solution(object):
         return palindromeHelper(s, start, end)
 
 test_string = "A man, a plan, a canal: Panama"
-assert Solution().isPalindromeRecursive(test_string) == True
-assert Solution().isPalindromeRecursive("ab_a") == True
-assert Solution().isPalindromeRecursive("abba") == True
-assert Solution().isPalindromeRecursive("abcda") == False
+# assert Solution().isPalindromeRecursive(test_string) == True
+# assert Solution().isPalindromeRecursive("ab_a") == True
+# assert Solution().isPalindromeRecursive("abba") == True
+# assert Solution().isPalindromeRecursive("abcda") == False
 
 
 # assert Solution().isPalindrome(test_string) == True
 # assert Solution().isPalindrome("ab_a") == True
+
+def palindrome1(s: str):
+    if len(s) <=1:
+        return True
+    elif s[0] == s[-1]:
+        return palindrome(s[1:-1])
+    elif s[0] != s[-1]:
+        return False
+
+
+def palindrome_helper(s: str, start, end):
+    if end <= start:
+        return True
+    elif s[start] == s[end]:
+        start += 1
+        end -= 1
+        return palindrome_helper(s, start, end)
+    elif s[start] != s[end]:
+        return False
+
+def palindrome(s):
+    start = 0
+    end = len(s) -1
+    return palindrome_helper(s, start, end)
+
+test_string = "A man, a plan, a canal: Panama"
+test_string = test_string.lower()
+test_string = re.sub(r'[^\w]', '', test_string).replace('_','')
+assert palindrome(test_string) == True
+assert palindrome("aba") == True
+assert palindrome("abba") == True
+assert palindrome("abcda") == False

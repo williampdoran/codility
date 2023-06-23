@@ -60,5 +60,5 @@ class Solution:
 # print(Solution().maxProfit([7,1,5,3,6,4]))
 # print(Solution().maxProfit([7,6,4,3,1]))
 
-print(Solution().maxProfitDynamicProgramming([23171,21011,21123,21366,21013,21367]))
+#print(Solution().maxProfitDynamicProgramming([23171,21011,21123,21366,21013,21367]))
 print(Solution().solution([23171,21011,21123,21366,21013,21367]))

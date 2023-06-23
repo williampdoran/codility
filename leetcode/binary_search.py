@@ -24,8 +24,27 @@ class Solution(object):
         end = len(nums) - 1
         return searchRec(nums, target, start, end)
 
+
+    def binSearch(self, nums, target):
+        print(nums)
+        if len(nums) == 0:
+            return -1
+        elif len(nums) == 1:
+            return nums[0] if nums[0] == target else -1
+        else:
+            start = 0
+            end = len(nums) -1
+            mid = (start + end) // 2
+            if nums[mid] == target:
+                return nums[mid]
+            elif nums[mid] > target:
+                return self.binSearch(nums[:mid], target)
+            else:
+                return self.binSearch(nums[mid +1:end+1], target)
+
 nums = [-1,0,3,5,9,12]
 target = 9
 
-print(Solution().search(nums, target))
-print(Solution().search([5], 5))
+#print(Solution().search(nums, target))
+print(Solution().binSearch(nums, target))
+#print(Solution().search([5], 5))

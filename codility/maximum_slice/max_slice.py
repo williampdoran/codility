@@ -6,7 +6,6 @@ def max_sum(A):
     return max_so_far
 
 
-print(max_sum([5,-7,3,5,-2,4,-1]))
 
 
 def solution(A):
@@ -26,6 +25,6 @@ def solution2(A):
     print(profits)
     return max_sum(profits)
 
-
+print(max_sum([5,-7,3,5,-2,4,-1]))
 print(solution([23171,21011,21123,21366,21013,21367]))
 print(solution2([23171,21011,21123,21366,21013,21367]))
